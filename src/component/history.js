@@ -1,6 +1,5 @@
 import './style/history.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { IoMdSearch } from "react-icons/io";
 
 const History = ({query,setQuery,handleSubmit,history}) =>{
  
@@ -13,13 +12,13 @@ const History = ({query,setQuery,handleSubmit,history}) =>{
               <div key={index} style={{animationDelay: index* 0.1+ "s"}} className="history-item" >
                 {search}
               </div>
-            ))
+            )) 
           }
         </div>
         <div className="search">
           <input type="text" value={query} placeholder='Search' onChange={(event) => setQuery(event.target.value)}/>
           <button className='btn' onClick={handleSubmit}>
-            <FontAwesomeIcon icon={faSearch} />
+            <IoMdSearch />
           </button>
         </div>
       </div>

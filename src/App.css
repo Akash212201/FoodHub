@@ -1,8 +1,8 @@
 :root{
-    --primary-color: rgb(255,0,86);
+    --primary-color: #ff0056;
     --text-color: #0A0A0A;
     --text-light: #575757;
-    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-color: #00000033;
     --background-color: #fff;
 }
 .container{

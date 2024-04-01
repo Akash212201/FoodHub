@@ -1,5 +1,4 @@
-import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BiLogoFacebookCircle, BiLogoInstagram, BiLogoTwitter } from "react-icons/bi";
 
 const ChiefBox = ({chief}) => {
   return (
@@ -9,9 +8,10 @@ const ChiefBox = ({chief}) => {
         <h3 className="chief-name">{chief.name}</h3>
         <p className="chief-recipe-count">Recipes:<b>{chief.rCount}</b></p>
         <p className="chief-cuisine">Cuisine <b>{chief.cuisine}</b></p>
-        <p className="chief-icon"><FontAwesomeIcon icon={faFacebook}/>
-        <FontAwesomeIcon icon={faTwitter}/>
-        <FontAwesomeIcon icon={faInstagram}/>
+        <p className="chief-icon">
+        <BiLogoFacebookCircle/>
+        <BiLogoInstagram />
+        <BiLogoTwitter />
         </p>
         </div>
     </div>

@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
+  min-height: 50vh;
 }
 
 .box {

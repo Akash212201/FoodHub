@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import './settings.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-
+import { FaCheck } from "react-icons/fa";
 const Settings = () => {
   const colors = [
     "rgb(255, 0, 86)",
@@ -70,14 +68,16 @@ const Settings = () => {
         <div className="options-container">
           <div className="option light" onClick={() => themeHandler(0)}>
             {
-              theme === "light" && (<div className="check-box"><FontAwesomeIcon icon={faCheck} /></div>)
+              theme === "light" && (<div className="check-box">
+                <FaCheck /></div>)
             }
 
           </div>
           <div className="option dark" onClick={() => themeHandler(1)}>
             {
-              theme === "dark" && (<div className="check-box"><FontAwesomeIcon icon={faCheck} /></div>)
-            }
+              theme === "dark" && (<div className="check-box">
+                <FaCheck /></div>)
+            } 
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ const Settings = () => {
             colors.map((color, index) => (
               <div className="option light" style={{ backgroundColor: color }} onClick={() => colorHandler(index)}>
                 {
-                  scolor === index && (<div className="check-box"><FontAwesomeIcon icon={faCheck} /></div>)
+                  scolor === index && (<div className="check-box"><FaCheck /></div>)
                 }
               </div>
             ))

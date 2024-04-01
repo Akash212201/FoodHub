@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
-import History from '../pcomponent/history';
-import RecipesBox from '../pcomponent/recipesBox';
+import History from '../component/history';
+import RecipesBox from '../component/recipesBox';
 import './recipes.css';
 const Recipes =()=>{
   const api ="https://www.themealdb.com/api/json/v1/1/search.php?s=";
@@ -52,5 +52,5 @@ const Recipes =()=>{
       </div>
     </>
   );
-}
+} 
 export default Recipes

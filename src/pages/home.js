@@ -1,7 +1,7 @@
-import HeroSection from '../pcomponent/heroSection'
-import Iskills from '../pcomponent/Iskills';
-import Message from '../pcomponent/message';
-import Chiefs from '../pcomponent/chiefs';
+import HeroSection from '../component/heroSection'
+import Iskills from '../component/Iskills';
+import Message from '../component/message';
+import Chiefs from '../component/chiefs';
 export const Home = () => {
   return (
     <div>

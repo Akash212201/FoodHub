@@ -45,6 +45,8 @@
 .chief-icon{
     font-size: 1.2em;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 .chief-icon svg{
     margin-right: 0.5em;
@@ -54,10 +56,10 @@
     color: #0063f7;
 }
 .chief-icon svg:nth-child(2){
-    color: #13b4ff;
+    color: #ff0056;
 }
 .chief-icon svg:nth-child(3){
-    color: #ff0056;
+    color: #13b4ff;
 }
 @media(max-width: 768px){
     .chiefs .title{
