@@ -8,6 +8,8 @@ import Recipes from './pages/recipes';
 import Settings from './pages/settings';
 import Login from './pages/login';
 import SignUp from './pages/signup';
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 import './App.css';
 const App = () =>{
   
@@ -24,6 +26,8 @@ const App = () =>{
       <Route path='/signup' element={<SignUp/>}/>
     </Routes>
    </div>
+   <SpeedInsights/>
+   <Analytics/>
    <Footer/>
    </Router>
   );
