@@ -1,35 +1,39 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import {
-  BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+  BrowserRouter as Router, Routes, Route
+} from 'react-router-dom';
 import Navbar from './component/navbar'
 import Footer from './component/footer';
-import Home from './pages/home';
-import Recipes from './pages/recipes';
-import Settings from './pages/settings';
-import Login from './pages/login';
-import SignUp from './pages/signup';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 import './App.css';
-const App = () =>{
-  
+
+const Home = lazy(() => import('./pages/home'));
+const Settings = lazy(() => import('./pages/settings'));
+const Login = lazy(() => import('./pages/login'));
+const SignUp = lazy(() => import('./pages/signup'));
+const Recipes = lazy(() => import('./pages/recipes'));
+const App = () => {
+
   return (
-   <Router>
-   <Navbar/>
-   <div className="container main">
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/recipes' element={<Recipes/>}/>
-      <Route path='/settings' element={<Settings/>}/>
-      <Route path='/login' element={<Login/>}/>
-      <Route path='/signup' element={<SignUp/>}/>
-    </Routes>
-   </div>
-   <SpeedInsights/>
-   <Analytics/>
-   <Footer/>
-   </Router>
+    <Router>
+      <Navbar />
+      <Suspense fallback={<div className='flex justify-center items-center text-lg'>Loading</div>}>
+        <div className="container main">
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/recipes' element={<Recipes />} />
+            <Route path='/settings' element={<Settings />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<SignUp />} />
+          </Routes>
+        </div>
+      </Suspense>
+      <SpeedInsights />
+      <Analytics />
+      <Footer />
+    </Router>
   );
 }
 
