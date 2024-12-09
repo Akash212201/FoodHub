@@ -8,13 +8,13 @@ import Newsletter from '../component/Newsletter';
 export const Home = () => {
   return (
     <>
-     <Newsletter/>
      <HeroSection/>
      <Ingredients/>
      <Iskills/>
      <Popularrecipies/>
      <Message/>
      <Chiefs/>
+     <Newsletter/>
     </> 
   )
 }

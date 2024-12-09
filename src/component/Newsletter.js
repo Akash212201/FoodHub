@@ -30,7 +30,7 @@ const Newsletter = () => {
             </div>
             <div className="newsletter-img-box">
                 <div className='newsletter-img'>
-                    <img src=''/>
+                    <img src='../images/gallery/newsletterImg.svg'/>
                 </div>
             </div>
         </div>

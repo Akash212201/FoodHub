@@ -47,7 +47,7 @@
     width: 100%;
     outline: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: .5rem;
 }
 .newsletter-btn{
@@ -58,6 +58,7 @@
     background-color: var(--primary-color);
     font-weight: 600;
     border: 0px;
+    cursor: pointer;
 }
 .newsletter-btn:hover{
     background-color: #47f3a6;
@@ -80,7 +81,7 @@
         font-size: 1.5rem;
     }
     .newsletter-box{
-        width: 320px;
+        width: 265px;
         gap: 0.5rem;
     }
     .newsletter-box .icon{

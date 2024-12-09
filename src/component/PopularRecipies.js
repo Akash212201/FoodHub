@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './style/popularRecipies.css'
+import { FaEye } from "react-icons/fa";
 
 const Popularrecipies = () => {
   const [recipes, setRecipes] = useState([]);
@@ -38,9 +39,12 @@ const Popularrecipies = () => {
                 <h1>{recipeItem.strMeal.length < 25 ? recipeItem.strMeal : recipeItem.strMeal.substring(0, 25) + '...'}</h1>
                 <p>Category: {recipeItem.strCategory}</p>
               </div>
-              <div className="recipe-overlay"><Link to="www.themealdb.com/api/json/v1/1/lookup.php?i=52772">
-                Link to Page
-              </Link></div> 
+              <div className="recipe-overlay">
+                <Link to="www.themealdb.com/api/json/v1/1/lookup.php?i=52772">
+                <FaEye className="icon"/>
+              </Link>
+              Quick View
+              </div> 
             </div>
           ))
 
