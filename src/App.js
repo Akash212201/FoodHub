@@ -7,6 +7,8 @@ import Footer from './component/footer';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 import './App.css';
+import ByIngredient from './pages/ByIngredient';
+import RecipeDetails from './pages/RecipeDetails';
 
 const Home = lazy(() => import('./pages/home'));
 const Settings = lazy(() => import('./pages/settings'));
@@ -27,6 +29,8 @@ const App = () => {
             <Route path='/settings' element={<Settings />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
+            <Route path='/recipe/:recipeId' element={<RecipeDetails />} />
+            <Route path='/:ingredient' element={<ByIngredient />} />
           </Routes>
         </div>
       </Suspense>

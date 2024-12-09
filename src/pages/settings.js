@@ -42,7 +42,7 @@ const Settings = () => {
       root.style.setProperty(key, settings[key])
     }
   }, [settings])
-  
+
   //Change Theme
   const themeHandler = (e) => {
     const _theme = { ...themes[e] };
@@ -77,7 +77,7 @@ const Settings = () => {
             {
               theme === "dark" && (<div className="check-box">
                 <FaCheck /></div>)
-            } 
+            }
           </div>
         </div>
       </div>

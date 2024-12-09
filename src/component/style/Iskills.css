@@ -1,12 +1,27 @@
+.isSkill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.improve{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .img{
     border-radius: 10px;
     overflow: hidden;
+    width: 450px;
+    height: 430px;
+    
 }
 .img img{
     width: 100%;
 }
 .improve .space{
     padding-left: 3em;
+    width: 50%;
 }
 .improve .skill-item{
     border-left: 6px solid var(--primary-color);
@@ -50,3 +65,15 @@
 .improve .btn{
     margin-top: 15px;
 }
+@media(max-width: 480px) {
+    .img{
+        width: 250px;
+        height: 320px;
+    }
+}
+@media(max-width: 776px) {
+    .improve .space{
+        width: 100%;
+    }
+}
+

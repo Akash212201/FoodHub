@@ -10,9 +10,9 @@ const RecipesBox = ({ recipe }) => {
       <div className="box">
           <img src={strMealThumb} alt={strMeal} className="box-image" />
           <div className="box-body">
-              <span className="category">Category {strCategory}</span>
+              {strCategory ? <span className="category">Category {strCategory}</span>:<></>}
               <h3>Name: {strMeal}</h3>
-              <a href={"https://www.themealdb.com/meal/" + idMeal} className="ins" >View Recipe</a>
+              <a href={"/recipe/" + idMeal} className="ins" >View Recipe</a>
           </div>
       </div>
   )
