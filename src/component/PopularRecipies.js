@@ -40,7 +40,7 @@ const Popularrecipies = () => {
                 <p>Category: {recipeItem.strCategory}</p>
               </div>
               <div className="recipe-overlay">
-                <Link to="www.themealdb.com/api/json/v1/1/lookup.php?i=52772">
+                <Link to={`/recipeDetails/${recipeItem.idMeal}`}>
                 <FaEye className="icon"/>
               </Link>
               Quick View

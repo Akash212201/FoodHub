@@ -11,7 +11,7 @@ const Newsletter = () => {
         <div className="newsletter">
             <div className="newsletter-info-box">
                 <h2>Stay Updated and increase
-                    <br />your knowledge and thinking
+                    your knowledge and thinking
                 </h2>
                 <p>Subscribe to our newsletter and get latest updates of events,
                     book launch, reader's community trends and much mor
@@ -30,7 +30,7 @@ const Newsletter = () => {
             </div>
             <div className="newsletter-img-box">
                 <div className='newsletter-img'>
-                    <img src='../images/gallery/newsletterImg.svg'/>
+                    <img src='../images/gallery/newsletterImg.svg' />
                 </div>
             </div>
         </div>

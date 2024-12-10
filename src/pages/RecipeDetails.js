@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router';
-
+import './recipeDetails.css'
 const RecipeDetails = () => {
     const location = useLocation()
     const ingredient = location.pathname.split('/').pop();
@@ -24,9 +24,38 @@ const RecipeDetails = () => {
                 })
 
             });
+            const recipeInfo = data.meals.map(meal => {
+                const ingredients = [];
 
-            // console.log(data.meals,"g")
-            setRecipes(data.meals);
+                // Merge all possible ingredient and measure pairs
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient = meal[`strIngredient${i}`];
+                    const measure = meal[`strMeasure${i}`];
+
+                    if (ingredient && measure) {
+                        ingredients.push({ ingredient, measure });
+                    }
+                    else
+                        break;
+                }
+                // console.log("dd",ingredients)
+                const instructions = meal.strInstructions.split('.')
+                    .map(sentence => sentence.trim())
+                    .filter(sentence => sentence);
+                const instructionsArr = instructions.map(instruction =>
+                    instruction.replace(/^\s*(STEP\s*\d+:?|[\r\n]+)+|\s*(STEP\s*\d+:?|[\r\n]+)+$/gi, "").trim()
+                ).filter(instruction => instruction);
+
+                return {
+                    ...meal,
+                    ingredients,
+                    instructionsArr
+                };
+            });
+
+            // console.log("nrw",recipeInfo);
+
+            setRecipes(recipeInfo);
         }
         catch (e) {
             console.log(e)
@@ -51,29 +80,33 @@ const RecipeDetails = () => {
                                 <div className='recipe-img'>
                                     <img src={meal.strMealThumb} alt='' />
                                 </div>
+                                <h1>{meal.strMeal}</h1>
                             </div>
                             <div className='ingredients-img-box'>
-                                <div className='ingredients-img'>
-                                    <div className='ingredient-img'>
-                                        <img src='' alt='' />
-                                    </div>
-                                    <p>item 1</p>
-                                </div>
+                                {
+                                    meal.ingredients.map((ingredient, idx) => (
+                                        <div key={idx} className='recipe-ingredients-img'>
+                                            <div className='recipe-ingredient-img'>
+                                                <img src={`https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`} alt='' />
+                                            </div>
+                                            <p className='ingredient-title1'>{ingredient.ingredient}</p>
+                                            <p className='ingredient-title2'>{ingredient.measure}</p>
+                                        </div>
+                                    ))
+                                }
 
                             </div>
                         </div>
                         <div className='instructions'>
                             <h1 className='instructions-title'>Instructions</h1>
-                            <p>1. lorem</p>
-                            <p>2. lorem</p>
-                            <p>3. lorem</p>
-                            <p>4. lorem</p>
-                            <p>5. lorem</p>
-                            <p>6. lorem</p>
-                            <p>7. lorem</p>
-                            <p>8. lorem</p>
-                            <p>9. lorem</p>
-                            <p>10. lorem</p>
+                            {
+                                meal.instructionsArr.map((instruction, idx) => (
+
+                                    <p key={idx} className='instructions-step'>
+                                        {`Step ${idx + 1}: ${instruction}.`}
+                                        </p>
+                                ))
+                            }
                         </div>
                     </div>
                 ))

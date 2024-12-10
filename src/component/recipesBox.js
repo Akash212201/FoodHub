@@ -12,7 +12,7 @@ const RecipesBox = ({ recipe }) => {
           <div className="box-body">
               {strCategory ? <span className="category">Category {strCategory}</span>:<></>}
               <h3>Name: {strMeal}</h3>
-              <a href={"/recipe/" + idMeal} className="ins" >View Recipe</a>
+              <a href={"/recipeDetails/" + idMeal} className="ins" >View Recipe</a>
           </div>
       </div>
   )

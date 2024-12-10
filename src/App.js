@@ -20,7 +20,7 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <Suspense fallback={<div className='flex justify-center items-center text-lg'>Loading</div>}>
+      <Suspense fallback={<div className='loading'>Loading...</div>}>
         <div className="container main">
           <Routes>
             <Route path='/' element={<Home />} />
@@ -29,7 +29,7 @@ const App = () => {
             <Route path='/settings' element={<Settings />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
-            <Route path='/recipe/:recipeId' element={<RecipeDetails />} />
+            <Route path='/recipeDetails/:recipeId' element={<RecipeDetails />} />
             <Route path='/:ingredient' element={<ByIngredient />} />
           </Routes>
         </div>
