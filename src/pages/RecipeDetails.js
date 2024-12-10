@@ -13,9 +13,7 @@ const RecipeDetails = () => {
             const url = api + ingredient;
             const res = await fetch(url);
             const data = await res.json();
-            //console.log(data.meals,"g2")
             data.meals.forEach(meal => {
-                //Remove null or empty values from the object
                 Object.keys(meal).forEach(key => {
 
                     if (meal[key] === null || meal[key] === "" || meal[key] === undefined) {
@@ -27,7 +25,6 @@ const RecipeDetails = () => {
             const recipeInfo = data.meals.map(meal => {
                 const ingredients = [];
 
-                // Merge all possible ingredient and measure pairs
                 for (let i = 1; i <= 20; i++) {
                     const ingredient = meal[`strIngredient${i}`];
                     const measure = meal[`strMeasure${i}`];
@@ -38,7 +35,6 @@ const RecipeDetails = () => {
                     else
                         break;
                 }
-                // console.log("dd",ingredients)
                 const instructions = meal.strInstructions.split('.')
                     .map(sentence => sentence.trim())
                     .filter(sentence => sentence);
@@ -52,9 +48,6 @@ const RecipeDetails = () => {
                     instructionsArr
                 };
             });
-
-            // console.log("nrw",recipeInfo);
-
             setRecipes(recipeInfo);
         }
         catch (e) {
@@ -103,7 +96,7 @@ const RecipeDetails = () => {
                                 meal.instructionsArr.map((instruction, idx) => (
 
                                     <p key={idx} className='instructions-step'>
-                                        {`Step ${idx + 1}: ${instruction}.`}
+                                        <b>{`Step ${idx + 1}:`}</b>{` ${instruction}.`}
                                         </p>
                                 ))
                             }

@@ -69,6 +69,7 @@
 .ingredient-title1{
     font-size: 1.5rem;
     color: var(--text-color);
+    text-align: center;
 }
 .ingredient-title2{
     color: var(--text-light);
@@ -81,7 +82,6 @@
 @media(max-width:776px){
     .recipe-details .recipe-tag{
         padding: 0px;
-        /* border: 1px solid red; */
     }
     .recipe-details .recipes-img-box{
         flex-direction: column;
@@ -95,9 +95,11 @@
         
     }
     .recipe-details .recipe-ingredients-img{
-        width: 160px;
+        width: 140px;
         height: 250px;
-        
+    }
+    .ingredient-title1{
+        font-size: 1.25rem;
     }
     
 }
